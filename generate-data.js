@@ -1,5 +1,6 @@
 // import * as faker from ;
 const { faker } = require('@faker-js/faker');
+const path = require('path');
 const fs = require('fs');
 // set locale to use vietnam 
 // faker.locale = 'vi'
@@ -25,7 +26,6 @@ const randomDataBlog = (n)=>{
 (()=>{
   //random data 
   const data = randomDataBlog(20)
-
   //prepare db ob
   const db = {
     posts: data,
@@ -34,7 +34,8 @@ const randomDataBlog = (n)=>{
   }
   
   // write db ob to db.json
-  fs.writeFile('db.json',JSON.stringify(db),()=>{
+  const filePath = path.join("./", "db.json");
+  fs.writeFile(filePath,JSON.stringify(db),()=>{
     console.log('write data successfully 000')
   })
 })()
