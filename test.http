@@ -1,0 +1,30 @@
+@baseURL = http://localhost:4000/api
+## @name post
+GET {{baseURL}}/posts
+
+################################
+
+GET {{baseURL}}/posts?_page=2&_limit=10
+
+POST {{baseURL}}/posts
+Content-Type: application/json
+
+{
+  "description": "cao tùng anh",
+    "featuredImage": "cao tung anh",
+    "publishDate": "",
+    "published": true,
+    "title": "không có"
+}
+################################
+
+PATCH {{baseURL}}/posts/13
+Content-Type: application/json
+
+{
+  "description": "cao tùng thái",
+    "featuredImage": "cao tung thái",
+    "publishDate": "",
+    "published": true,
+    "title": "không có"
+}
